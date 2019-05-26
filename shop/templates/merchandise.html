@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merchandise</title>
+    <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#shapka{
+			width: 100%;
+			height: 50px;
+			background-color: grey;
+			color: white;
+			font-size: 40px;
+			padding-left: 20px;
+		}
+        .conteiner{
+			width: 50%;
+			box-sizing: border-box;
+			margin-left: 25%;
+			margin-top: 30px;
+		}
+        .img{
+			height: 400px;
+		}
+        #a{
+            text-align: center;
+        }
+        body{
+            font-size: 30px;
+        }
+        a{
+			text-decoration: none;
+		}
+        #c{
+            color: white;
+            text-decoration: none;
+        }
+        #d{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="shapka"><a href="/" id="c">Магазин б/у техники</a></div>
+    <div class="conteiner">
+        <p id="a"><img src="{{ merchandise.image }}" class="img"></p><br><hr>
+        <p id="d"><b>{{ merchandise.title }}</b></p>
+        <p>Продавец: <a href="/sellers/{{ merchandise.seller.id }}">{{ merchandise.seller }}</a></p>
+        <p>Цена товара: {{ merchandise.price }} рублей</p>
+        <p>Описание товара: {{ merchandise.text }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller</title>
+    <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#shapka{
+			width: 100%;
+			height: 50px;
+			background-color: grey;
+			color: white;
+			font-size: 40px;
+			padding-left: 20px;
+		}
+        .conteiner{
+			width: 50%;
+			box-sizing: border-box;
+			margin-left: 25%;
+			margin-top: 30px;
+		}
+        #a{
+            text-align: center;
+            font-size: 100px;
+        }
+        p{
+            font-size: 30px;
+        }
+        .b{
+            font-size: 50px;
+        }
+        a{
+			text-decoration: none;
+		}
+        #c{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="shapka"><a href="/" id="c">Магазин б/у техники</a></div>
+    <div class="conteiner">
+        <p id="a"><b>{{ seller.name }}</b></p>
+        <p><b class="b">Товары:</b>
+            {% for merchandise in merchandises %}
+                <a href="/merchandises/{{ merchandise.id }}"><b>{{ merchandise.title }}</b></a>
+            {% endfor %}
+        </p><hr>
+        <p class="b"><b>Отзывы:</b></p>
+        {% for comment in comments %}
+            <hr><p><b>{{ comment.name }}</b>: {{ comment.text }}</p><br>
+        {% endfor %}
+    </div>
+</body>
+</html>
